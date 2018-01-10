@@ -1,0 +1,6 @@
+Vcc -> predefinisani napon
+minus -> invertovano
+plus -> nije invertovano
+u oba slucaja je pojacan
+kad nema povratne sprege inf je
+LSB je najveci otpor

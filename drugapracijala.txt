@@ -1,0 +1,17 @@
+docs
+eeprom
+  (107-109,112-114,117-120)
+interrupts
+  85
+  90  - INTCON control registers
+  102 - INT Register summary
+  143-146, INT on change
+  187 - TMR0 config registers
+ADC module
+  150-161
+DAC module
+  165-168
+
+
+Best of 2. parcijale:
+89,90,102,107-109,112-114,117-120,143-146,150-158,165-168,187

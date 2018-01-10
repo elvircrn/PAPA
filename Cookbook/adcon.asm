@@ -1,0 +1,38 @@
+banksel ADCON1
+;ADCON1=B'01110000'
+;Lijevo poravnanje
+bcf ADCON1,ADFM
+;Interni RC oscilator
+bsf ADCON1,ADCS2
+bsf ADCON1,ADCS1
+bsf ADCON1,ADCS0
+;Vss za Vref-, Vdd za Vref+
+bcf ADCON1,ADNREF
+bcf ADCON1,ADPREF1
+bcf ADCON1,ADPREF0
+
+banksel ADCON0
+;ADCON0=B'00000001'
+;Ukljucivanje ADC
+bsf ADCON0,ADON
+;Izbor AN0
+bcf ADCON0,CHS4
+bcf ADCON0,CHS3
+bcf ADCON0,CHS2
+bcf ADCON0,CHS1
+bcf ADCON0,CHS0
+
+
+
+  banksel ADCON0
+  bsf ADCON0, ADGO ;start ADC
+not_ready
+  btfsc ADCON0, GO
+  goto not_ready
+  
+  banksel ADRESH
+  movf ADRESH,0
+  movwf rez1
+  banksel ADRESL
+  movf ADRESL,0
+  movwf rez2
